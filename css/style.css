@@ -1,0 +1,79 @@
+main:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+main .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100ch;
+    background: rgb(245, 242, 242);
+}
+
+main .mapa {
+    width: 100%;
+    height: 30vh;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+main .altimetro {
+    width: 100%;
+    height: 12vh;
+    background-color: rgb(73, 147, 211);
+}
+
+#divAltimetro {
+    text-align: center;
+    font-size: 2em;
+}
+
+main .datos {
+    width: 100%;
+    height: 58vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+section .row {
+    width: 100%;
+    height: 140px;
+    border: 1px solid black;
+    /* background: rgb(151, 182, 126); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+section .row .col {
+    width: 40%;
+    height: 140px;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+}
+
+section #compartir {
+    width: 80%;
+    height: 55px;
+    margin-top: 30px;
+    margin-left: 10%;
+    background-color: rgb(73, 147, 211);
+}
+
+@media screen and (min-width: 480px) {
+    main .main {
+        width: 480px;
+    }
+}
