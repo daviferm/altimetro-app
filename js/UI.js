@@ -20,6 +20,13 @@ class UI {
             map: this.mapa
         });
     }
+
+    obtenerDireccion(coord) {
+        let resp = fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${coord.lat},${coord.lng}&key=AIzaSyAIEk-dF-6BRl-wSsEHXN1eQ6FV8TKjOPE`);
+
+        return resp;
+
+    }
     displayLocationElevation(location) {
         // Initiate the location request
         this.elevator.getElevationForLocations({
@@ -28,7 +35,6 @@ class UI {
             if (status === 'OK') {
                 // Retrieve the first result
                 if (results[0]) {
-
 
                     this.elevacion = results[0].elevation;
 
@@ -41,7 +47,4 @@ class UI {
             }
         });
     }
-
-
-
 }
