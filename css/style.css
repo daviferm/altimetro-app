@@ -78,7 +78,7 @@ section .row .col {
 
 .temp img,
 .viento img {
-    width: 25px;
+    width: 20px;
 }
 
 #temp,
@@ -101,7 +101,7 @@ section #compartir {
 }
 
 section #compartir img {
-    width: 25px;
+    width: 20px;
     color: aliceblue;
     margin-right: 10px;
     margin-bottom: 10px;
