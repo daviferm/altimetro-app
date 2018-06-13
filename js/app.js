@@ -31,42 +31,24 @@ let mostrarMapa = async(coord) => {
                 document.getElementById('direccion').textContent = respuesta;
                 console.log(respuesta);
             })
+            .catch(e => console.log('Error al optener direccion-' + e))
+
+        let clima = await getClima(coord.lat, coord.lng)
+            .then(res => {
+                return res.json();
+            })
+            .then(resp => {
+                console.log(resp);
+                let temperatura = resp.main.temp + ' Cº';
+                document.getElementById('temp').textContent = temperatura;
+                let viento = resp.wind.speed + ' Km/h';
+                document.getElementById('viento').textContent = viento;
+                console.log('Temperatura: ' + resp.main.temp + ' Cº');
+                console.log('Velocidad de viento: ' + resp.wind.speed + ' Km/h');
+            })
 
         return `Datos descargado de la API..`;
     } catch (e) {
         return `Error al requerir los datos ${e}`;
     }
-}
-
-let lat = 40.1999759,
-    lng = -3.6953777,
-    cnt = 5;
-const getClima = async(lat, lng) => {
-
-    //asiox
-    let resp = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&&appid=2f90935de188b93e6aad487fc49adae5`)
-
-
-
-    return resp;
-    // return resp.data.main.temp;
-}
-
-// getClima(lat, lng)
-//     .then(res => {
-//         return res.json();
-//     })
-//     .then(resp => {
-//         console.log(resp);
-//     })
-
-let coordenadas = {
-    lat: 40.1999759,
-    lng: -3.6953777
-}
-const getDirection = async(coord) => {
-
-    let resp = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${coord.lat},${coord.lng}&key=AIzaSyAIEk-dF-6BRl-wSsEHXN1eQ6FV8TKjOPE`);
-
-    return resp;
 }

@@ -13,7 +13,7 @@ main .main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100ch;
+    height: 95vh;
     background: rgb(245, 242, 242);
 }
 
@@ -29,8 +29,9 @@ main .mapa {
 
 main .altimetro {
     width: 100%;
-    height: 14vh;
-    background-color: rgb(58, 131, 194);
+    height: 15vh;
+    color: aliceblue;
+    background-color: #0085D6;
 }
 
 #divAltimetro {
@@ -52,7 +53,7 @@ main .altimetro {
 
 main .datos {
     width: 100%;
-    height: 58vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -75,12 +76,36 @@ section .row .col {
     border: 0px solid black;
 }
 
+.temp img,
+.viento img {
+    width: 25px;
+}
+
+#temp,
+#viento {
+    font-size: 1.8em;
+}
+
 section #compartir {
+    position: relative;
     width: 80%;
-    height: 55px;
+    height: 70px;
     margin-top: 30px;
     margin-left: 10%;
-    background-color: rgb(58, 131, 194);
+    border-radius: 8px;
+    color: aliceblue;
+    background-color: #0085D6;
+    font-size: 1.4em;
+    cursor: pointer;
+    outline: none;
+}
+
+section #compartir img {
+    width: 25px;
+    color: aliceblue;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
 }
 
 @media screen and (min-width: 480px) {
