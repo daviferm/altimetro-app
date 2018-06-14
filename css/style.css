@@ -76,14 +76,23 @@ section .row .col {
     border: 0px solid black;
 }
 
-.temp img,
-.viento img {
-    width: 20px;
+.contentDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contentDiv p {
+    margin: 0px 5px;
+}
+
+.contentDiv img {
+    width: 18px;
 }
 
 #temp,
 #viento {
-    font-size: 1.8em;
+    font-size: 1.7em;
 }
 
 section #compartir {

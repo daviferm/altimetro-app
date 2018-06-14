@@ -4,7 +4,7 @@ class UI {
 
         this.mapa = new google.maps.Map(document.getElementById('map'), {
             center: this.latLng,
-            zoom: 10,
+            zoom: 15,
             draggable: false,
             fullscreenControl: false,
             mapTypeControl: false,
