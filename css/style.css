@@ -3,6 +3,10 @@ main:-webkit-full-screen {
     height: 100%;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -61,8 +65,7 @@ main .datos {
 
 section .row {
     width: 100%;
-    height: 120px;
-    border: 0px solid black;
+    height: 80px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -73,7 +76,6 @@ section .row .col {
     width: 40%;
     height: 140px;
     text-align: center;
-    border: 0px solid black;
 }
 
 .contentDiv {
@@ -84,15 +86,16 @@ section .row .col {
 
 .contentDiv p {
     margin: 0px 5px;
+    font-size: 1.7em;
 }
 
 .contentDiv img {
     width: 18px;
 }
 
-#temp,
-#viento {
-    font-size: 1.7em;
+#coordN,
+#coordO {
+    font-size: 1em;
 }
 
 section #compartir {

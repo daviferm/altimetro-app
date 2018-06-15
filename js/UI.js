@@ -40,7 +40,7 @@ class UI {
 
                     document.getElementById('altimetro').textContent = Math.floor(this.elevacion) + ' m';
                 } else {
-                    console.log('No hay resultados.');
+                    console.log('No hay resultados de elevacion.');
                 }
             } else {
                 console.log('Servicio de elevacion fallido: ' + status);
