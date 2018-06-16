@@ -1,10 +1,10 @@
-class UI {
+export class UI {
     constructor(pos) {
         this.latLng = pos;
 
         this.mapa = new google.maps.Map(document.getElementById('map'), {
             center: this.latLng,
-            zoom: 15,
+            zoom: 11,
             draggable: false,
             fullscreenControl: false,
             mapTypeControl: false,

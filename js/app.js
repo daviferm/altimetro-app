@@ -1,3 +1,14 @@
+import { getClima } from './clima.js';
+import { UI } from './map.js';
+
+//Variables y constantes 
+const btnCompartir = document.getElementById('compartir');
+const btnCerrar = document.getElementById('cerrar');
+const divRedes = document.querySelector('.redesSociales');
+const imgBrujula = document.getElementById('imgBrujula');
+const coordBrujula = document.getElementById('brujula');
+
+// Funciones
 let getPosicion = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
@@ -86,6 +97,9 @@ let mostrarInfo = async(coord) => {
 
                 document.getElementById('amanecer').textContent = amanecer;
                 document.getElementById('atardecer').textContent = atardecer;
+
+                // btnCompartir.addEventListener('click', compartirMapa);
+
             })
 
         return `Datos descargado de la API..`;
@@ -95,3 +109,45 @@ let mostrarInfo = async(coord) => {
 }
 
 getPosicion();
+
+//Funciones para abrir o cerrar modal para compartir mi posición
+function compartirMapa() {
+    divRedes.style.transform = 'translateY(-100%)';
+    btnCerrar.addEventListener('click', cerrarCompartir);
+}
+
+function cerrarCompartir() {
+    divRedes.style.transform = 'translateY(100%)';
+}
+
+if (!window.DeviceOrientationEvent) {
+
+    alert("Device Orientation no soportadas por tu navegador");
+
+} else {
+
+    window.addEventListener("deviceorientation", handleOrientation, true);
+}
+
+
+function handleOrientation(event) {
+    var absolute = event.absolute;
+    var alpha = event.alpha;
+    var beta = event.beta;
+    var gamma = event.gamma;
+
+    // resto del codigo, aqui se rotaran elementos u otra operacion
+    imgBrujula.style.transform = "rotate(" + alpha + "deg)";
+
+    if (alpha >= 0) coordBrujula.textContent = 'N';
+    if (alpha > 22) coordBrujula.textContent = 'NO';
+    if (alpha > 66) coordBrujula.textContent = 'O';
+    if (alpha > 112) coordBrujula.textContent = 'SO';
+    if (alpha > 156) coordBrujula.textContent = 'S';
+    if (alpha > 202) coordBrujula.textContent = 'SE';
+    if (alpha > 246) coordBrujula.textContent = 'E';
+    if (alpha > 292) coordBrujula.textContent = 'NE';
+    if (alpha > 337) coordBrujula.textContent = 'N';
+
+    // coordBrujula.innerHTML = Math.floor(alpha) + "°";
+}
