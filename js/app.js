@@ -98,7 +98,7 @@ let mostrarInfo = async(coord) => {
                 document.getElementById('amanecer').textContent = amanecer;
                 document.getElementById('atardecer').textContent = atardecer;
 
-                // btnCompartir.addEventListener('click', compartirMapa);
+                btnCompartir.addEventListener('click', compartirMapa);
 
             })
 
@@ -112,12 +112,12 @@ getPosicion();
 
 //Funciones para abrir o cerrar modal para compartir mi posición
 function compartirMapa() {
-    divRedes.style.transform = 'translateY(-100%)';
+    divRedes.style.transform = 'translateY(-50%)';
     btnCerrar.addEventListener('click', cerrarCompartir);
 }
 
 function cerrarCompartir() {
-    divRedes.style.transform = 'translateY(100%)';
+    divRedes.style.transform = 'translateY(0%)';
 }
 
 if (!window.DeviceOrientationEvent) {
