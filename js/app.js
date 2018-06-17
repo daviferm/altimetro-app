@@ -28,7 +28,9 @@ let getPosicion = () => {
                 mostrarInfo(position)
                     .then(mensaje => {
                         document.querySelector('.main').style.display = 'flex';
-                        document.getElementById('imgPortada').style.display = 'none';
+                        setTimeout(function() {
+                            document.getElementById('imgPortada').style.display = 'none';
+                        }, 500);
                         console.log(mensaje);
                     })
                     .catch(err => console.log(err))
