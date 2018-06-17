@@ -28,11 +28,13 @@ let getPosicion = () => {
                 mostrarInfo(position)
                     .then(mensaje => {
                         document.querySelector('.main').style.display = 'flex';
-                        document.getElementById('imgPortada').classList.add('outsImg');
 
                         setTimeout(function() {
+                            document.getElementById('imgPortada').classList.add('outsImg');
+                        }, 500);
+                        setTimeout(function() {
                             document.getElementById('imgPortada').style.display = 'none';
-                        }, 1000);
+                        }, 2000);
                         console.log(mensaje);
                     })
                     .catch(err => console.log(err))
