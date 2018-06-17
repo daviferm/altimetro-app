@@ -18,7 +18,7 @@ main:-webkit-full-screen {
     height: 100vh;
     z-index: 500;
     background-image: url('../img/portada.png');
-    background-position: center -50px;
+    background-position: center -10px;
     background-size: 100%;
     background-repeat: no-repeat;
     animation: .5s portada 1;
@@ -30,6 +30,22 @@ main:-webkit-full-screen {
     }
     to {
         opacity: 1;
+    }
+}
+
+#imgPortada.outsImg {
+    transition-duration: .3s;
+    animation-name: out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
