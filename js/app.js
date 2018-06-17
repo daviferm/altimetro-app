@@ -30,7 +30,7 @@ let getPosicion = () => {
                         document.querySelector('.main').style.display = 'flex';
                         setTimeout(function() {
                             document.getElementById('imgPortada').style.display = 'none';
-                        }, 500);
+                        }, 1000);
                         console.log(mensaje);
                     })
                     .catch(err => console.log(err))
