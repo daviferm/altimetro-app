@@ -26,7 +26,11 @@ let getPosicion = () => {
                 document.getElementById('coordO').textContent = lngUtm;
 
                 mostrarInfo(position)
-                    .then(mensaje => console.log(mensaje))
+                    .then(mensaje => {
+                        document.querySelector('.main').style.display = 'flex';
+                        document.getElementById('imgPortada').style.display = 'none';
+                        console.log(mensaje);
+                    })
                     .catch(err => console.log(err))
             });
 
@@ -138,6 +142,8 @@ function handleOrientation(event) {
 
     // resto del codigo, aqui se rotaran elementos u otra operacion
     imgBrujula.style.transform = "rotate(" + alpha + "deg)";
+
+
 
     if (alpha >= 0) coordBrujula.textContent = 'N';
     if (alpha > 22) coordBrujula.textContent = 'NO';
