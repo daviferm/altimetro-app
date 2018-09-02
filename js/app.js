@@ -16,7 +16,6 @@ let getPosicion = () => {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                console.log(position);
 
                 let latitud = position.lat;
                 let longitud = position.lng;
@@ -82,9 +81,9 @@ let mostrarInfo = async(coord) => {
         let direccion = await ui.obtenerDireccion(coord);
         direccion.json()
             .then(res => {
-                const respuesta = res.results[1].formatted_address;
+                console.log(res);
+                const respuesta = res.results[3].formatted_address;
                 document.getElementById('direccion').textContent = respuesta;
-                console.log(respuesta);
             })
             .catch(e => console.log('Error al optener direccion-' + e))
 

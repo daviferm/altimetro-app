@@ -17,6 +17,14 @@ export class UI {
     mostrarPin(pos) {
         this.marker = new google.maps.Marker({
             position: pos,
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 6, //tamaño
+                strokeColor: '#f00', //color del borde
+                strokeWeight: 2, //grosor del borde
+                fillColor: '#00f', //color de relleno
+                fillOpacity: 1 // opacidad del relleno
+            },
             map: this.mapa
         });
     }
